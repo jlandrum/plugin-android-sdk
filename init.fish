@@ -1,7 +1,7 @@
 set paths $ANDROID_HOME/{tool?,platform-tool?}
-if test -n "$paths"
+if test -z "$paths"
   set paths $ANDROID_SDK_ROOT/{tool?,platform-tool?}
-else if test -n "$paths"
+else if test -z "$paths"
   set paths $HOME/Android/Sdk/{tool?,platform-tool?}
 end
 
