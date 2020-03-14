@@ -1,6 +1,9 @@
 set paths $ANDROID_HOME/{tool?,platform-tool?}
-  or set paths $ANDROID_SDK_ROOT/{tool?,platform-tool?}
-  or set paths $HOME/Android/Sdk/{tool?,platform-tool?}
+if test -n "$paths"
+  set paths $ANDROID_SDK_ROOT/{tool?,platform-tool?}
+else if test -n "$paths"
+  set paths $HOME/Android/Sdk/{tool?,platform-tool?}
+end
 
 if test (count $paths) -gt 0
   set -l IFS /
